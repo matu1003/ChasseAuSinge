@@ -59,16 +59,20 @@ while True:
 
     if jerry.centerx - tom.centerx >= 0:
         #Tant que Tom n'a pas depasse Jerry
-        #Movement:
+        #Mouvement:
+        # Comme on a 25 iteration par seconde, dt = 0.04
         tom.move(0.04)
         jerry.move(0.04)
-        # Dessin
-        win.fill((255, 255, 255))
+    
+    # Clear screen
+    win.fill((255, 255, 255))
         
+    # Draw elements
     cannon.draw(win)
     tom.draw(win)
     jerry.draw(win)
-
+    
+    # Fixe le nombre d'etapes par seconde a 25
     clock.tick(25)
 
-    pygame.display.update()
+    pygame.display.update() # Update screen
